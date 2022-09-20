@@ -1,16 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import {MenuProduct} from "./components/MenuProduct";
+
 
 function App() {
     return (
         <div className="App">
             <header className="App-header">
                 <h1>Menu</h1>
-                <div>Cola</div>
-                <div>Water</div>
-                <div>Bier</div>
-                <div>Wijn</div>
-
+                <MenuProduct productName={"cola"}/>
+                <MenuProduct productName={"water"}/>
+                <MenuProduct productName={"bier"}/>
+                <MenuProduct productName={"wijn"}/>
             </header>
         </div>
     );
