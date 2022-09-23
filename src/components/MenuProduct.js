@@ -20,7 +20,7 @@ export function ProductSize(props) {
 }
 
 function ProductPrice(props) {
-    return <p style={{fontSize: "Small", color:"blue",justifyContent:"flex-end"}}>{props.product.price}€</p>;
+    return <span style={{marginLeft:"50px",justifyContent:"flex-end"}}>{props.product.price}€</span>;
 }
 
 ProductPrice.propTypes = {product: PropTypes.any};
