@@ -1,9 +1,9 @@
 {
   "name": "dynamic_oefeningen",
   "version": "0.1.0",
-  "homepage": ".",
   "private": true,
   "dependencies": {
+    "homepage": ".",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
