@@ -1,5 +1,14 @@
 import * as PropTypes from "prop-types";
 
+MenuProduct.propTypes={
+    product: PropTypes.shape({
+        name: PropTypes.string,
+        size: PropTypes.number,
+        price: PropTypes.number,
+        note: PropTypes.string})
+
+}
+
 export function MenuProduct(props) {
     const {product} = props;
     if (!product?.name) return;
@@ -28,11 +37,13 @@ export function ProductSize(props) {
     );
 }
 
+
 function ProductPrice(props) {
     return <span style={{justifyContent:"flex-end"}}>{props.product.price}€</span>;
 }
 
 ProductPrice.propTypes = {product: PropTypes.any};
+
 
 function ProductNote(props) {
     return <p style={{fontSize: "Small", color:"blue"}}>{props.product.note ? props.product.note : ""}</p>;
