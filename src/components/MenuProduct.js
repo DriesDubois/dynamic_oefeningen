@@ -4,10 +4,19 @@ export function MenuProduct(props) {
     const {product} = props;
     if (!product?.name) return;
     return (
-        <div style={{margin: "2vw", fontSize: "Larger",display:"flex"}}>
-            {product.name || "unknown"} <ProductSize product={product}/>  <ProductNote
-            product={product} /> <ProductPrice product={product}/>
+
+        <div style={{margin: "2vw", fontSize: "Larger",display:"flex",justifyContent:"space-between",maxWidth:"50%"}}>
+            <div>
+                {product.name || "unknown"} <ProductSize product={product}/>  <ProductNote
+                product={product} />
+            </div>
+            <div>
+                <ProductPrice product={product}/>
+            </div>
+
         </div>
+
+
     );
 }
 
@@ -15,12 +24,12 @@ export function ProductSize(props) {
     const {product} = props;
     if (!product?.size) return;
     return (
-        <p style={{fontSize: "Small", color:"blue"}}>({product.size}cl)</p>
+        <span style={{fontSize: "Small", color:"blue"}}>({product.size}cl)</span>
     );
 }
 
 function ProductPrice(props) {
-    return <span style={{marginLeft:"50px",justifyContent:"flex-end"}}>{props.product.price}€</span>;
+    return <span style={{justifyContent:"flex-end"}}>{props.product.price}€</span>;
 }
 
 ProductPrice.propTypes = {product: PropTypes.any};
