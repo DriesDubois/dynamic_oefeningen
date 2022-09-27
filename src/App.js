@@ -23,10 +23,10 @@ function App() {
                     <MenuCardPage products={PRODUCTS_DATA}/>
                 </TabPanel>
                 <TabPanel>
-                    <PicturesPage pictures={PICTURES_DATA}></PicturesPage>
+                    <PicturesPage pictures={PICTURES_DATA}/>
                 </TabPanel>
                 <TabPanel>
-                    <NumbersPage numbers={NUMBERS_DATA}></NumbersPage>
+                    <NumbersPage array={NUMBERS_DATA} title={"Alle getallen"}/>
                 </TabPanel>
             </Tabs>
         </>

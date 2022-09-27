@@ -1,15 +1,14 @@
 import {Numbers} from "../components/Numbers";
+import {Number} from "../components/Numbers";
+import {MenuProduct} from "../components/MenuProduct";
 
 export function NumbersPage(props) {
-    const {numbers} = props;
-    if (!numbers) return;
+    const {array}=props;
+    const {title} = props;
     return (
         <>
-            <h1>Alle getallen</h1>
-            <div style={{flexDirection: "column", display:"flex"}}>
-                {numbers.map(n => <Numbers Key={n.index} Numbers={n}/>)}
-            </div>
+        <Numbers array={array} title={title}/>
         </>
-
-    );
+    )
+        ;
 }
