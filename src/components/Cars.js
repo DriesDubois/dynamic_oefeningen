@@ -32,8 +32,8 @@ export function Car(props){
     const {car} = props;
     // const {carColor} = (COLOR_TRANSLATION.filter(translation => translation.dutch === car.color).map(translated => translated.english));
     // const {carColor} = translateColorToDutch(COLOR_TRANSLATION, car.color);
-    COLOR_TRANSLATION.find(el => el.dutch === "blauw")
-    console.log(COLOR_TRANSLATION.find(el => el.dutch === "blauw").english)
+    // COLOR_TRANSLATION.find(el => el.dutch === "blauw")
+    // console.log(COLOR_TRANSLATION.find(el => el.dutch === "blauw").english)
 
     return (
         <div className="d-flex flex-column space-between mb-5" style={{background:"white"}}>
@@ -41,7 +41,7 @@ export function Car(props){
             <p className="text-center">{car.brand &&<span>merk: {car.brand}</span> }</p>
             <p className="text-center">{car.type &&<span>type: {car.type}</span> }</p>
             <p style={{background: getBackground(COLOR_TRANSLATION,car.color)}} className="text-center">{car.color &&<span>kleur: {car.color}</span> }</p>
-            <p></p>
+
 
         </div>
     )
@@ -49,12 +49,8 @@ export function Car(props){
 }
 
 function getBackground(array , color) {
-    console.log(array.find(el => el.dutch === color).english)
-    return array.find(el => el.dutch === color).english;
+    console.log((array.find(el => el.dutch === color)).english)
+    return (array.find(el => el.dutch === color).english)
 }
 
-function translateColorToDutch(translationTable,color){
 
-    return translationTable.find(el => el.dutch === color).english
-
-}

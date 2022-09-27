@@ -49,7 +49,7 @@ export const COLOR_TRANSLATION = [
     {
         dutch: "geel",
         english: "yellow"
-    },
+    },typeof
     {
         dutch: "groen",
         english: "green"
@@ -61,7 +61,7 @@ export const COLOR_TRANSLATION = [
     {
         dutch: "grijs",
         english: "grey"
-    },
+    }
 
 ];
 
