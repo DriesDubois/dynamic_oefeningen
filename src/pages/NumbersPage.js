@@ -1,13 +1,14 @@
-import {Numbers} from "../components/Numbers";
-import {Number} from "../components/Numbers";
-import {MenuProduct} from "../components/MenuProduct";
+import {Numbers, NumbersLargerThen6} from "../components/Numbers";
+
 
 export function NumbersPage(props) {
-    const {array}=props;
-    const {title} = props;
+    const {array} = props;
     return (
         <>
-        <Numbers array={array} title={title}/>
+            <Numbers array={array} title={"Alle getallen"}/>
+            <Numbers array={array.filter(n => n>6)} title={"Alle getallen groter dan 6"}/>
+            <Numbers array={array.map(n => n*2)} title={"Alle getallen *2"}/>
+
         </>
     )
         ;

@@ -26,7 +26,7 @@ function App() {
                     <PicturesPage pictures={PICTURES_DATA}/>
                 </TabPanel>
                 <TabPanel>
-                    <NumbersPage array={NUMBERS_DATA} title={"Alle getallen"}/>
+                    <NumbersPage array={NUMBERS_DATA}/>
                 </TabPanel>
             </Tabs>
         </>

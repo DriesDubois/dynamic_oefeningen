@@ -14,10 +14,10 @@ export function Numbers(props) {
 
     return(
     <>
-        <div style={{background: "lightBlue"}}>
+        <div style={{background: "lightBlue", paddingLeft: "10%", paddingRight: "10%"}}>
             <h1 style={{textAlign: "center"}}>{title}</h1>
-            <div className="d-flex align-content-start flex-wrap space-between">
-                {array.map(n => <Number Key={n.index} number={n}/>)}
+            <div className="d-flex align-content-start flex-wrap space-between mb-5 justify-content-between">
+                {array.map(n => <div style={{padding: "50px" , margin: "25px", background: "white", minWidth: "120px"}}>{n}</div>)}
             </div>
         </div>
 
@@ -25,14 +25,8 @@ export function Numbers(props) {
     )
 }
 
-export function Number(props){
-    const{number} = props;
-    return(
-        <>
-        <div style={{padding: "50px" , margin: "25px", background: "white", minWidth: "120px"}}>{number}</div>
-        </>
-    )
-}
+
+
 
 
 
