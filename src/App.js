@@ -4,11 +4,13 @@ import './App.css';
 import {PRODUCTS_DATA} from "./data/data";
 import {PICTURES_DATA} from "./data/data";
 import {NUMBERS_DATA} from "./data/data";
+import {CAR_DATA} from "./data/data";
 import {MenuCardPage} from "./pages/MenuCardPage";
 import {PicturesPage} from "./pages/PicturesPage";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import {NumbersPage} from "./pages/NumbersPage";
+import {CarsPage} from "./pages/CarsPage";
 
 function App() {
     return (
@@ -18,6 +20,7 @@ function App() {
                     <Tab>Menu</Tab>
                     <Tab>Pictures</Tab>
                     <Tab>Numbers</Tab>
+                    <Tab>Cars</Tab>
                 </TabList>
                 <TabPanel>
                     <MenuCardPage products={PRODUCTS_DATA}/>
@@ -27,6 +30,9 @@ function App() {
                 </TabPanel>
                 <TabPanel>
                     <NumbersPage array={NUMBERS_DATA}/>
+                </TabPanel>
+                <TabPanel>
+                    <CarsPage array={CAR_DATA}/>
                 </TabPanel>
             </Tabs>
         </>

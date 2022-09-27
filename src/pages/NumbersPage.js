@@ -1,4 +1,4 @@
-import {Numbers, NumbersLargerThen6} from "../components/Numbers";
+import {Numbers} from "../components/Numbers";
 
 
 export function NumbersPage(props) {
