@@ -32,9 +32,9 @@ export function Car(props){
     return (
         <div className="d-flex flex-column space-between mb-5" style={{background:"white"}}>
         <h2 className="text-center mb-1">{car.name}</h2>
-            <p className="text-center">merk: {car.brand}</p>
-            <p className="text-center">type: {car.type}</p>
-            <p className="text-center">kleur: {car.color}</p>
+            <p className="text-center">{car.brand &&<span>merk: {car.brand}</span> }</p>
+            <p className="text-center">{car.type &&<span>type: {car.type}</span> }</p>
+            <p className="text-center">{car.color &&<span>kleur: {car.color}</span> }</p>
         </div>
     )
 

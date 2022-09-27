@@ -17,7 +17,7 @@ export function Numbers(props) {
         <div style={{background: "lightBlue", paddingLeft: "10%", paddingRight: "10%"}}>
             <h1 style={{textAlign: "center"}}>{title}</h1>
             <div className="d-flex align-content-start flex-wrap space-between mb-5 justify-content-between">
-                {array.map(n => <div style={{padding: "50px" , margin: "25px", background: "white", minWidth: "120px"}}>{n}</div>)}
+                {array.map(n => <div key={n.index} style={{padding: "50px" , margin: "25px", background: "white", minWidth: "120px"}}>{n}</div>)}
             </div>
         </div>
 
