@@ -5,7 +5,7 @@ import {MyCard} from "./MyCard";
 export function Persons(props) {
     const {persons} = props;
     const {title} = props;
-
+    if (!persons) return;
     return (
         <Section title={title}>
             {persons.map(p => <Person key={p.id} person={p}/>)}

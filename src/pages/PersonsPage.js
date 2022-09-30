@@ -25,8 +25,7 @@ export function PersonsPage(props) {
             <Persons persons={persons} title={"Personen"}/>
             <Persons persons={descendingByAge} title={"Personen gesorteerd op leeftijd"}/>
             <Numbers numbers={allAgesSeparately} title={"alle leeftijden"}/>
-            <Numbers numbers={uniqueAgesSorted} title={"unieke leeftijden"}/>
-            <Cities title="TEST" cities={CITY_TESTDATA}/>
+            <Numbers numbers={uniqueAgesSorted} title={"unieke leeftijden gesorteerd"}/>
             <Cities title="population" cities={population}/>
         </>
     )
