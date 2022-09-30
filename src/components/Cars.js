@@ -1,5 +1,6 @@
 import * as PropTypes from "prop-types";
 import {COLOR_TRANSLATION} from "../data/data";
+import {Section} from "./Section";
 
 
 Cars.propTypes = {
@@ -10,19 +11,25 @@ Cars.propTypes = {
 }
 
 export function Cars(props) {
-    const {array} = props;
+    const {cars} = props;
     const {title} = props;
 
     return(
-        <>
-            <div style={{background: "lightBlue", paddingLeft: "10%", paddingRight: "10%"}}>
-                <h1 style={{textAlign: "center", marginBottom: "25px"}}>{title}</h1>
-                <div className="d-flex space-between mb-5 flex-wrap justify-content-between" style={{gap:"50px"}}>
-                    {array.map(c => <Car key={c.id} car={c}/> )}
-                </div>
-            </div>
 
-        </>
+        <Section title={title}>
+            {cars.map(c => <Car key={c.id} car={c}/> )}
+        </Section>
+
+        // Oude manier zonder gebruik van child en section functie
+        // <>
+        //     <div style={{background: "lightBlue", paddingLeft: "10%", paddingRight: "10%"}}>
+        //         <h1 style={{textAlign: "center", marginBottom: "25px"}}>{title}</h1>
+        //         <div className="d-flex space-between mb-5 flex-wrap justify-content-between" style={{gap:"50px"}}>
+        //             {array.map(c => <Car key={c.id} car={c}/> )}
+        //         </div>
+        //     </div>
+        //
+        // </>
     )
 }
 

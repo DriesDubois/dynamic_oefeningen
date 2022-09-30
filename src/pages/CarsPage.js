@@ -5,7 +5,7 @@ export function CarsPage(props) {
     const {array} = props;
     return (
         <>
-            <Cars array={array} title={"Auto's"}/>
+            <Cars cars={array} title={"Auto's"}/>
         </>
     )
         ;
