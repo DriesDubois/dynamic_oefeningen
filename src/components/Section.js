@@ -15,13 +15,13 @@ export function Section(props) {
 
 
     return(
-            <div style={{background: "lavender", paddingLeft: "10%", paddingRight: "10%"}} className="mt-3 rounded shadow-sm">
+            <div style={{background: "lavender", padding: "0 10% 5% 10%"}} className="mt-3 rounded shadow-sm">
                 <h1 style={{textAlign: "center", marginBottom: "25px"}}>{title}</h1>
-                <Container>
-                    <Row>
+
+                    <div  className="d-flex flex-row gap-5 flex-wrap mb-5">
                         {children}
-                    </Row>
-                </Container>
+                    </div>
+
             </div>
     )
 }
