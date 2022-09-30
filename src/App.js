@@ -34,7 +34,7 @@ function App() {
                     <CarsPage array={CAR_DATA}/>
                 </TabPanel>
                 <TabPanel>
-                    <PersonsPage array={PERSON_DATA}/>
+                    <PersonsPage persons={PERSON_DATA}/>
                 </TabPanel>
             </Tabs>
         </>

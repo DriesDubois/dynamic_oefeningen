@@ -26,7 +26,7 @@ export function Numbers(props) {
     return(
 
         <Section title={title}>
-            {numbers.map(n => <Number key={n.index} number={n}/>)}
+            {numbers.map((n,index) => <Number key={index} number={n}/>)}
         </Section>
 
         //Oude manier
