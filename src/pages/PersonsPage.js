@@ -20,7 +20,6 @@ export function PersonsPage(props) {
 
 
 
-
     return (
         <>
             <Persons persons={persons} title={"Personen"}/>
