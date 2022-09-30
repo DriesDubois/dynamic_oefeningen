@@ -9,24 +9,15 @@ export function PersonsPage(props) {
     const descendingByAge = [...persons].sort((a, b) => b.age - a.age);
     const allAgesSeparately = [...persons].map(el => el.age);
     const uniqueAgesSorted = [...new Set(persons.map(person => person.age))].sort(((a, b) => b - a));
-    const population = [...new Set(persons.map(person => person.city ))];
-    console.log(population)
-    const finalpopulation = population
+    const uniqueCityNames = [...new Set(persons.map(person => person.city ))];
+    const population = uniqueCityNames
         .map(city => ({
             name: city,
             numberOfPersons: persons.reduce((counter, el) => {
-                if (el.city === city) {
-                    return counter + 1;
-                }
-                return counter;
+                return el.city === city ? counter + 1 : counter;
             },0)
         }));
-    console.log(finalpopulation)
 
-    void function PopulationCounter(){
-
-
-    }
 
 
 
@@ -37,7 +28,7 @@ export function PersonsPage(props) {
             <Numbers numbers={allAgesSeparately} title={"alle leeftijden"}/>
             <Numbers numbers={uniqueAgesSorted} title={"unieke leeftijden"}/>
             <Cities title="TEST" cities={CITY_TESTDATA}/>
-            <Cities title="population" cities={finalpopulation}/>
+            <Cities title="population" cities={population}/>
         </>
     )
 }
