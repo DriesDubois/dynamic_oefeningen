@@ -1,5 +1,4 @@
 import * as PropTypes from "prop-types";
-import {Container, Row} from "react-bootstrap";
 
 
 
@@ -22,6 +21,15 @@ export function Section(props) {
                         {children}
                     </div>
 
+
             </div>
+    // <div style={{background: "lavender", padding: "0 10% 5% 10%"}} className="mt-3 rounded shadow-sm">
+    //     <h2 className="text-center">{title}</h2>
+    //     <container>
+    //
+    //     </container>
+    //
+    // </div>
+
     )
 }

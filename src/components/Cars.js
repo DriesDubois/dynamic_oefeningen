@@ -32,7 +32,7 @@ export function Car(props) {
             {car.brand && <p className="text-center">merk: {car.brand} </p>}
             {car.type && <p className="text-center">type: {car.type} </p>}
             {car.note && <p className="text-center">note: {car.note} </p>}
-            <p style={car?.color && {background: getBackground(COLOR_TRANSLATION, car.color), marginInline: "50px"}}
+            <p style={car?.color && {background: getBackground(COLOR_TRANSLATION, car.color), marginInline: "50px",color: getTextColor(getBackground(COLOR_TRANSLATION,car.color))  }}
                className="text-center">{car.color && <span>kleur: {car.color}</span>}</p>
         </MyCard>
     )
@@ -41,5 +41,10 @@ export function Car(props) {
 function getBackground(array, color) {
     return (array.find(el => el.dutch === color).english)
 }
+
+function getTextColor(color) {
+    return color === "black" ? "white" : "black"
+}
+
 
 
