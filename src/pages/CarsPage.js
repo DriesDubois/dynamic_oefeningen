@@ -8,5 +8,4 @@ export function CarsPage(props) {
             <Cars cars={array} title={"Auto's"}/>
         </>
     )
-        ;
 }

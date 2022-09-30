@@ -1,6 +1,7 @@
 import * as PropTypes from "prop-types";
 import {COLOR_TRANSLATION} from "../data/data";
 import {Section} from "./Section";
+import {MyCard} from "./MyCard";
 
 
 Cars.propTypes = {
@@ -14,10 +15,10 @@ export function Cars(props) {
     const {cars} = props;
     const {title} = props;
 
-    return(
+    return (
 
         <Section title={title}>
-            {cars.map(c => <Car key={c.id} car={c}/> )}
+            {cars.map(c => <Car key={c.id} car={c}/>)}
         </Section>
 
         // Oude manier zonder gebruik van child en section functie
@@ -34,23 +35,32 @@ export function Cars(props) {
 }
 
 
-
-export function Car(props){
+export function Car(props) {
     const {car} = props;
 
     return (
-        <div className="d-flex flex-column space-between mb-5 justify-content-center" style={{background:"white",minWidth: "300px"}}>
-        <h2 className="text-center mb-1">{car.name}</h2>
+
+        <MyCard title={car.name}>
             {car.brand && <p className="text-center">merk: {car.brand} </p>}
             {car.type && <p className="text-center">type: {car.type} </p>}
             {car.note && <p className="text-center">note: {car.note} </p>}
-            <p style={car?.color && {background: getBackground(COLOR_TRANSLATION,car.color),marginInline:"50px"}} className="text-center">{car.color &&<span>kleur: {car.color}</span> }</p>
-        </div>
+            <p style={car?.color && {background: getBackground(COLOR_TRANSLATION, car.color), marginInline: "50px"}}
+               className="text-center">{car.color && <span>kleur: {car.color}</span>}</p>
+
+        </MyCard>
+
+        // <div className="d-flex flex-column space-between mb-5 justify-content-center" style={{background:"white",minWidth: "300px"}}>
+        // <h2 className="text-center mb-1">{car.name}</h2>
+        //     {car.brand && <p className="text-center">merk: {car.brand} </p>}
+        //     {car.type && <p className="text-center">type: {car.type} </p>}
+        //     {car.note && <p className="text-center">note: {car.note} </p>}
+        //     <p style={car?.color && {background: getBackground(COLOR_TRANSLATION,car.color),marginInline:"50px"}} className="text-center">{car.color &&<span>kleur: {car.color}</span> }</p>
+        // </div>
     )
 
 }
 
-function getBackground(array , color) {
+function getBackground(array, color) {
     return (array.find(el => el.dutch === color).english)
 }
 
