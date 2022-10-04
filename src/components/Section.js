@@ -1,4 +1,5 @@
 import * as PropTypes from "prop-types";
+import {Button} from "react-bootstrap";
 
 
 
@@ -15,7 +16,11 @@ export function Section(props) {
 
     return(
             <div style={{background: "lavender", padding: "0 10% 5% 10%"}} className="mt-3 rounded shadow-sm">
-                <h1 style={{textAlign: "center", marginBottom: "25px"}}>{title}</h1>
+                <div className="d-flex flex-row justify-content-center gap-5">
+                    <h1 style={{textAlign: "center", marginBottom: "25px"}}>{title}</h1>
+                    <Button variant="outline-info" onClick={()=> alert('klik')}>collapse</Button>
+                </div>
+
 
                     <div  className="d-flex flex-row gap-5 flex-wrap mb-5">
                         {children}

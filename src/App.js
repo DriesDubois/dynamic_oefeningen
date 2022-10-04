@@ -9,6 +9,7 @@ import 'react-tabs/style/react-tabs.css';
 import {NumbersPage} from "./pages/NumbersPage";
 import {CarsPage} from "./pages/CarsPage";
 import {PersonsPage} from "./pages/PersonsPage";
+import {EventAndStatePage} from "./pages/EventAndStatePage";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Tab>Numbers</Tab>
                     <Tab>Cars</Tab>
                     <Tab>Persons</Tab>
+                    <Tab>Event and state page</Tab>
                 </TabList>
                 <TabPanel>
                     <MenuCardPage products={PRODUCTS_DATA}/>
@@ -35,6 +37,9 @@ function App() {
                 </TabPanel>
                 <TabPanel>
                     <PersonsPage persons={PERSON_DATA}/>
+                </TabPanel>
+                <TabPanel>
+                    <EventAndStatePage/>
                 </TabPanel>
             </Tabs>
         </>
