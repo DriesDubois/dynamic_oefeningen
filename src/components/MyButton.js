@@ -3,7 +3,7 @@ import {Button} from "react-bootstrap";
 
 MyButton.propTypes = {
     MyButton: PropTypes.shape({
-        text: PropTypes.string
+        onClick: PropTypes.string
 
     })
 }
