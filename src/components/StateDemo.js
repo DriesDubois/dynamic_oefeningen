@@ -5,27 +5,36 @@ import {Counter} from "./Counter";
 import {OnOffDemo} from "./OnOffDemo";
 
 export function StateDemo() {
+    const [demoValue, setDemoValue] = useState(0);
+
     return <Section title="state">
-        <DemoValue/>
+        <DemoValue demoValue={demoValue} onDemoValueChange={setDemoValue}/>
         <div>
             <Counter name="Teller 1"/>
             <Counter name="Teller 2"/>
         </div>
-        <div>
-            <OnOffDemo/>
-        </div>
+        <OnOffDemo/>
+        <DemoValueReadonly demoValue={demoValue}/>
     </Section>
 }
 
-function DemoValue() {
-    const [demoValue, setDemoValue] = useState(0);
+function DemoValue(props) {
+    const {demoValue,onDemoValueChange} = props;
+
     return <>
         <div>de waarde van demoValue is {demoValue}</div>
         <div>de waarde van demoValue is {demoValue}</div>
         <div>
-            <MyButton onClick={() => setDemoValue(0)}>SET 0</MyButton>
-            <MyButton onClick={() => setDemoValue(77)}>SET 77</MyButton>
-            <MyButton onClick={() => setDemoValue(255)}>SET 255</MyButton>
+            <MyButton onClick={() => onDemoValueChange(0)}>SET 0</MyButton>
+            <MyButton onClick={() => onDemoValueChange(77)}>SET 77</MyButton>
+            <MyButton onClick={() => onDemoValueChange(255)}>SET 255</MyButton>
         </div>
     </>
+}
+
+function DemoValueReadonly (props){
+    const {demoValue} = props;
+    return <div>
+        <h3>{demoValue}</h3>
+    </div>
 }
