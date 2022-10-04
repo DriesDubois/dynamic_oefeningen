@@ -15,6 +15,7 @@ export function StateDemo() {
         </div>
         <OnOffDemo/>
         <DemoValueReadonly demoValue={demoValue}/>
+        <DemoValueIncrement demoValue={demoValue} onDemoValueChange={setDemoValue}/>
     </Section>
 }
 
@@ -37,4 +38,14 @@ function DemoValueReadonly (props){
     return <div>
         <h3>{demoValue}</h3>
     </div>
+}
+
+function DemoValueIncrement(props){
+    const {demoValue,onDemoValueChange} = props;
+
+    return <MyButton onClick={() => onDemoValueChange(demoValue+1)}>
+        demoValue increment
+    </MyButton>
+
+
 }
