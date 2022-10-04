@@ -18,10 +18,12 @@ export function EventDemo(props) {
             <div  className="">
                 <Button variant="primary" onClick={(e)=> alert(`${text} (${e.clientX}, ${e.clientY}`)}>click</Button>
             </div>
-            <div style={{background:"salmon"}} onClick={(e)=> {e.preventDefault(); alert('link is clicked')}} >
-                <a href={"www.google.com"}>
-                    link
+            <div style={{background:"salmon"}} onClick={(e)=> alert('div is clicked')} >
+                <a href={"www.google.com"} onClick={(e)=> {e.preventDefault(); e.stopPropagation(); alert('link is clicked')}}>
+                    dit is een link met een href
                 </a>
+                <span> - en - </span>
+                <Button variant="primary" onClick={(e)=>{e.stopPropagation(); alert('button is clicked')}}>dit is een button</Button>
             </div>
         </div>
     )
