@@ -1,9 +1,9 @@
 import {EventDemo} from "../components/EventDemo";
 import {StateDemo} from "../components/StateDemo";
 
-export function EventAndStatePage(props) {
+export function EventAndStatePage() {
     return (
-        <div style={{flexDirection: "column", display:"flex"}}>
+        <div >
             <EventDemo text={"poof"}/>
             <StateDemo/>
         </div>

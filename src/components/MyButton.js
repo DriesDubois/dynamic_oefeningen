@@ -9,9 +9,9 @@ MyButton.propTypes = {
 }
 
 export function MyButton(props) {
-    const {text, children} = props;
+    const {onClick, children} = props;
 
     return <Button variant="primary" size="sm" classname="ms-2 mt-1"
-                   onClick={children}>
-        {text}</Button>
+                   onClick={onClick}>
+        {children}</Button>
 }
