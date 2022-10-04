@@ -7,20 +7,28 @@ import {OnOffDemo} from "./OnOffDemo";
 export function StateDemo() {
     const [demoValue, setDemoValue] = useState(0);
 
-    return <Section title="state">
+    return <>
+        <Section title="demovalue">
         <DemoValue demoValue={demoValue} onDemoValueChange={setDemoValue}/>
-        <div>
-            <Counter name="Teller 1"/>
-            <Counter name="Teller 2"/>
-        </div>
-        <OnOffDemo/>
-        <DemoValueReadonly demoValue={demoValue}/>
-        <DemoValueIncrement demoValue={demoValue} onDemoValueChange={setDemoValue}/>
-    </Section>
+        </Section>
+
+        <Section title="counters">
+            <div>
+                <Counter name="Teller 1"/>
+                <Counter name="Teller 2"/>
+            </div>
+        </Section>
+
+        <Section>
+            <OnOffDemo/>
+            <DemoValueReadonly demoValue={demoValue}/>
+            <DemoValueIncrement demoValue={demoValue} onDemoValueChange={setDemoValue}/>
+        </Section>
+    </>
 }
 
 function DemoValue(props) {
-    const {demoValue,onDemoValueChange} = props;
+    const {demoValue, onDemoValueChange} = props;
 
     return <>
         <div>de waarde van demoValue is {demoValue}</div>
@@ -33,17 +41,17 @@ function DemoValue(props) {
     </>
 }
 
-function DemoValueReadonly (props){
+function DemoValueReadonly(props) {
     const {demoValue} = props;
     return <div>
         <h3>{demoValue}</h3>
     </div>
 }
 
-function DemoValueIncrement(props){
-    const {demoValue,onDemoValueChange} = props;
+function DemoValueIncrement(props) {
+    const {demoValue, onDemoValueChange} = props;
 
-    return <MyButton onClick={() => onDemoValueChange(demoValue+1)}>
+    return <MyButton onClick={() => onDemoValueChange(demoValue + 1)}>
         demoValue increment
     </MyButton>
 
