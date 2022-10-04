@@ -13,7 +13,6 @@ export function Counter (props) {
             <MyButton onClick={()=> setCounterValue(counterValue+1)}>+1</MyButton>
             <MyButton onClick={()=> setCounterValue(counterValue-1)}>-1</MyButton>
             <MyButton onClick={()=> setCounterValue(0)}>reset to 0</MyButton>
-
         </div>
         </>
 }

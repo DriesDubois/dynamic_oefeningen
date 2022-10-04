@@ -6,13 +6,15 @@ import {useState} from "react";
 Section.propTypes = {
     Section: PropTypes.shape({
         list: PropTypes.array,
-        title: PropTypes.string
+        title: PropTypes.string,
+        defaultState:PropTypes.bool
     })
 }
 
 export function Section(props) {
-    const {children, title} = props;
-    const [isOpen, setIsOpen] = useState(false);
+    const {children, title,defaultState} = props;
+    const [isOpen, setIsOpen] = useState(defaultState?defaultState:false);
+
 
     return (
 

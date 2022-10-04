@@ -12,7 +12,7 @@ export function StateDemo() {
         <DemoValue demoValue={demoValue} onDemoValueChange={setDemoValue}/>
         </Section>
 
-        <Section title="counters">
+        <Section title="counters" defaultState={true}>
             <div>
                 <Counter name="Teller 1"/>
                 <Counter name="Teller 2"/>
