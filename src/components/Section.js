@@ -18,7 +18,7 @@ export function Section(props) {
             <div style={{background: "lavender", padding: "0 10% 5% 10%"}} className="mt-3 rounded shadow-sm">
                 <div className="d-flex flex-row justify-content-center gap-5">
                     <h1 style={{textAlign: "center", marginBottom: "25px"}}>{title}</h1>
-                    <Button variant="outline-info" onClick={()=> alert('klik')}>collapse</Button>
+                    <Button variant="outline-info" size="sm" classname="ms-2 mt-1" onClick={()=> alert('klik')}>collapse</Button>
                 </div>
 
 
