@@ -17,7 +17,7 @@ export function FavoriteNumberPage(props) {
     return (
         <>
             <Section title="alle getallen" defaultState={true}>
-                <Numbers onSelectNumber={setFavorite} numbers={numbers} title="alle getallen"/>
+                <Numbers markedNumber={favorite} onSelectNumber={setFavorite} numbers={numbers} title="alle getallen"/>
                 <p>Mijn favoriete getal is {favorite?favorite:"nog niet gekozen"}</p>
             </Section>
         </>
