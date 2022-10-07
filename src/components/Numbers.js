@@ -10,19 +10,19 @@ Numbers.propTypes = {
 }
 
 function Number(props) {
-    const {number} = props;
+    const {number,onSelect} = props;
     return (
-        <MyCard title={number}/>
+        <MyCard onSelect={onSelect} title={number}/>
     )
 }
 
 
 
 export function Numbers(props) {
-    const {numbers} = props;
+    const {numbers,onSelectNumber} = props;
     return(
         <div className="d-flex flex-row flex-wrap">
-            {numbers.map((n,index) => <Number key={index} number={n}/>)}
+            {numbers.map((n,index) => <Number onSelect={onSelectNumber} key={index} number={n}/>)}
         </div>
 
     )
