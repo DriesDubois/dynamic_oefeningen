@@ -10,6 +10,7 @@ import {NumbersPage} from "./pages/NumbersPage";
 import {CarsPage} from "./pages/CarsPage";
 import {PersonsPage} from "./pages/PersonsPage";
 import {EventAndStatePage} from "./pages/EventAndStatePage";
+import {FavoriteNumberPage} from "./pages/FavoriteNumberPage";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                     <Tab>Cars</Tab>
                     <Tab>Persons</Tab>
                     <Tab>Event and state page</Tab>
+                    <Tab>Fav Numbers</Tab>
                 </TabList>
                 <TabPanel>
                     <MenuCardPage products={PRODUCTS_DATA}/>
@@ -40,6 +42,9 @@ function App() {
                 </TabPanel>
                 <TabPanel>
                     <EventAndStatePage/>
+                </TabPanel>
+                <TabPanel>
+                    <FavoriteNumberPage numbers={NUMBERS_DATA}/>
                 </TabPanel>
             </Tabs>
         </>

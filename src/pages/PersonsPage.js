@@ -1,6 +1,7 @@
 import {Persons} from "../components/Persons";
 import {Numbers} from "../components/Numbers";
 import {Cities} from "../components/Cities";
+import {Section} from "../components/Section";
 
 
 export function PersonsPage(props) {
@@ -23,8 +24,12 @@ export function PersonsPage(props) {
         <>
             <Persons persons={persons} title={"Personen"}/>
             <Persons persons={descendingByAge} title={"Personen gesorteerd op leeftijd"}/>
-            <Numbers numbers={allAgesSeparately} title={"alle leeftijden"}/>
-            <Numbers numbers={uniqueAgesSorted} title={"unieke leeftijden gesorteerd"}/>
+            <Section title={"alle leeftijden"}>
+                <Numbers numbers={allAgesSeparately} />
+            </Section>
+            <Section title={"unieke leeftijden gesorteerd"}>
+                <Numbers numbers={uniqueAgesSorted} />
+            </Section>
             <Cities title="population" cities={population}/>
         </>
     )
