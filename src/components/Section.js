@@ -23,7 +23,7 @@ export function Section(props) {
             <div className="d-flex flex-row justify-content-center gap-5">
                 <h1 style={{textAlign: "center", marginBottom: "25px"}}>{title}</h1>
                 <Button variant="outline-info" size="sm"
-                        classname="ms-2 mt-1"
+                        className="ms-2 mt-1"
                         onClick={() => setIsOpen(!isOpen)}>{isOpen?"-":"+"}</Button>
             </div>
             {isOpen && <div className="d-flex flex-row gap-5 flex-wrap mb-5">
