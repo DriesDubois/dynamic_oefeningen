@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import "./services/firebase"
 
 import {PERSON_DATA, PRODUCTS_DATA,PICTURES_DATA,NUMBERS_DATA,CAR_DATA} from "./data/data";
 import {MenuCardPage} from "./pages/MenuCardPage";
@@ -13,6 +14,7 @@ import {EventAndStatePage} from "./pages/EventAndStatePage";
 import {FavoriteNumberPage} from "./pages/FavoriteNumberPage";
 import {InputPage} from "./pages/InputPage";
 import {SearchPersonsPage} from "./pages/SearchPersonsPage";
+import {PersonsFromDbPage} from "./pages/PersonsFromDbPage";
 
 function App() {
     return (
@@ -28,6 +30,7 @@ function App() {
                     <Tab>Fav Numbers</Tab>
                     <Tab>Input</Tab>
                     <Tab>Search</Tab>
+                    <Tab>Persons from DB</Tab>
                 </TabList>
                 <TabPanel>
                     <MenuCardPage products={PRODUCTS_DATA}/>
@@ -55,6 +58,9 @@ function App() {
                 </TabPanel>
                 <TabPanel>
                     <SearchPersonsPage persons={PERSON_DATA}/>
+                </TabPanel>
+                <TabPanel>
+                    <PersonsFromDbPage/>
                 </TabPanel>
             </Tabs>
         </>
