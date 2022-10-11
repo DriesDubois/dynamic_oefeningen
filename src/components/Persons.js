@@ -3,11 +3,11 @@ import {MyCard} from "./MyCard";
 
 
 export function Persons(props) {
-    const {persons} = props;
+    const {persons,defaultState} = props;
     const {title} = props;
     if (!persons) return;
     return (
-        <Section title={title}>
+        <Section title={title} defaultState={defaultState}>
             {persons.map(p => <Person key={p.id} person={p}/>)}
         </Section>
     )

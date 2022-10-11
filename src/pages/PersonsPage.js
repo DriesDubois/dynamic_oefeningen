@@ -22,9 +22,9 @@ export function PersonsPage(props) {
 
     return (
         <>
-            <Persons persons={persons} title={"Personen"}/>
+            <Persons persons={persons} title={"Personen"} defaultState={true}/>
             <Persons persons={descendingByAge} title={"Personen gesorteerd op leeftijd"}/>
-            <Section title={"alle leeftijden"}>
+            <Section title={"alle leeftijden"} defaultState={true}>
                 <Numbers numbers={allAgesSeparately} />
             </Section>
             <Section title={"unieke leeftijden gesorteerd"}>
