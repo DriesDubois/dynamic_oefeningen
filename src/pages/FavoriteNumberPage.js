@@ -13,11 +13,12 @@ FavoriteNumberPage.propTypes = {
 export function FavoriteNumberPage(props) {
     const {numbers} = props;
     const [favorite, setFavorite] = useState(undefined);
+    const uniqueNumbers = [...new Set(numbers.map(n => n))];
 
     return (
         <>
             <Section title="alle getallen" defaultState={true}>
-                <Numbers markedNumber={favorite} onSelectNumber={setFavorite} numbers={numbers} title="alle getallen"/>
+                <Numbers markedNumber={favorite} onSelectNumber={setFavorite} numbers={uniqueNumbers} title="alle getallen"/>
                 <p>Mijn favoriete getal is {favorite?favorite:"nog niet gekozen"}</p>
             </Section>
         </>
