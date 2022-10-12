@@ -12,14 +12,13 @@ Cars.propTypes = {
 }
 
 export function Cars(props) {
-    const {cars,title} = props;
+    const {cars} = props;
     console.log(`we zitten in cars ${cars}`)
-
+    if (!cars) return ;
     return (
-
-        <Section title={title}>
+        <>
             {cars.map(c => <Car key={c.id} car={c}/>)}
-        </Section>
+        </>
     )
 }
 

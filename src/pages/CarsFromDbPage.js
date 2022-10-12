@@ -1,32 +1,24 @@
-import {collection} from 'firebase/firestore'
+import {Section} from "../components/Section";
+import {Cars} from "../components/Cars";
+import {collection} from "firebase/firestore";
 import {firestoreDB} from "../services/firebase";
 import {useCollectionData} from "react-firebase-hooks/firestore";
-import {useState} from "react";
-import {Cars} from "../components/Cars";
-const personConverter = {
-     toFirestore:undefined,
-     fromFirestore: function (snapshot,options){
-          const data = snapshot.data(options);
-          return {...data,id: snapshot.id}
-     }
-};
 
+
+const carConverter = {
+    toFirestore: undefined,
+    fromFirestore: function (snapshot, options) {
+        const data = snapshot.data(options);
+        console.log(data)
+        return {...data, id: snapshot.id}
+    }
+}
 
 export function CarsFromDbPage() {
-     const [searchInput, setSearchInput] = useState("");
-     const query = collection(firestoreDB, 'Cars');
-     const [values, loading, error] = useCollectionData(query);
-     console.log({values, loading, error});
-     console.log(query)
-     return (
-
-         <div className="m-3">
-              <label htmlFor="search">search input: </label>
-              <input id="search" value={searchInput} onChange={e => setSearchInput(e.target.value)}/>
-              <Cars title="personen uit de database" cars={values}/>
-         </div>
-
-
-     )
-
+    const query = collection(firestoreDB, 'Cars').withConverter(carConverter);
+    const [values, loading, error] = useCollectionData(query);
+    console.log({values, loading, error});
+    return<Section title="alle Auto's" defaultState={true}>
+            <Cars cars={values}/>
+    </Section>
 }
