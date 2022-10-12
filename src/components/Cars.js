@@ -1,6 +1,5 @@
 import * as PropTypes from "prop-types";
 import {COLOR_TRANSLATION} from "../data/data";
-import {Section} from "./Section";
 import {MyCard} from "./MyCard";
 
 
