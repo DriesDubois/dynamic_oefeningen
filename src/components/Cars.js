@@ -12,8 +12,8 @@ Cars.propTypes = {
 }
 
 export function Cars(props) {
-    const {cars} = props;
-    const {title} = props;
+    const {cars,title} = props;
+    console.log(`we zitten in cars ${cars}`)
 
     return (
 
