@@ -26,6 +26,7 @@ export function PersonsFromDbPage() {
     const [searchInput, setSearchInput] = useState("");
     const queryRef = query(collectionRef, orderBy("name"));
     const [values, loading, error] = useCollectionData(queryRef);
+    console.log({values,loading,error});
 
     function addDummyPerson() {
         const person = {name: "Dummy", age: 1, city: "DumVille"};
