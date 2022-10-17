@@ -1,4 +1,4 @@
-import {collection, query, orderBy, addDoc} from 'firebase/firestore'
+import {collection, query, orderBy, addDoc, updateDoc} from 'firebase/firestore'
 import {firestoreDB} from "../services/firebase";
 import {useCollectionData} from "react-firebase-hooks/firestore";
 import {Persons} from "../components/Persons";
@@ -16,7 +16,7 @@ const personConverter = {
     },
     fromFirestore: function (snapshot, options) {
         const data = snapshot.data(options);
-        return {...data, id: snapshot.id}
+        return {...data, id: snapshot.id ,ref:snapshot.ref}
     }
 };
 
@@ -26,16 +26,28 @@ export function PersonsFromDbPage() {
     const [searchInput, setSearchInput] = useState("");
     const queryRef = query(collectionRef, orderBy("name"));
     const [values, loading, error] = useCollectionData(queryRef);
-    console.log({values,loading,error});
+    console.log({values, loading, error});
 
-    function addDummyPerson() {
+    async function addDummyPerson() {
         const person = {name: "Dummy", age: 1, city: "DumVille"};
-        addDoc(collectionRef, person);
+        await addDoc(collectionRef, person);
+    }
+
+    async function incrementAllAges(increment = 1) {
+        try {
+            const arrayOfPromises = values.map(person => updateDoc(person.ref, {age: person.age + increment}));
+            await Promise.all(arrayOfPromises);
+            console.log(`increment ages with ${increment} for all persons done`)
+        } catch{
+            console.log(`Error ages not incremented ${error}`)
+        }
+
     }
 
     return (
         <div className="m-3">
             <MyButton onClick={() => addDummyPerson()}>add Dummy</MyButton>
+            <MyButton onClick={() => incrementAllAges()}>increment all ages</MyButton>
             <label htmlFor="search">search input: </label>
             <input id="search" value={searchInput} onChange={e => setSearchInput(e.target.value)}/>
             <Persons title="personen uit de database" persons={filterPersons(values, searchInput)} defaultState={true}/>
