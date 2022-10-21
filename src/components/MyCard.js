@@ -1,7 +1,5 @@
 import * as PropTypes from "prop-types";
-import {Container, Row} from "react-bootstrap";
-import {COLOR_TRANSLATION} from "../data/data";
-
+import {Card} from "react-bootstrap";
 
 
 MyCard.propTypes = {
@@ -11,21 +9,11 @@ MyCard.propTypes = {
 }
 
 export function MyCard(props) {
-   let {children,title,onSelect,isMarked} = props;
-
-    // {car?.color && {background: getBackground(COLOR_TRANSLATION, car.color)
-
-    return (
-    <div  style={{background: isMarked===title?"orange":"white", paddingLeft: "3%", paddingRight: "3%",minWidth:"300px",maxWidth:"500px"}}
-         className="mt-3 rounded shadow-sm"
-         onClick={()=> onSelect(onSelect=title)}
-    >
-        <h1 style={{textAlign: "center", marginBottom: "25px"}}>{title}</h1>
-        <Container>
-            <Row>
-                {children}
-            </Row>
-        </Container>
-    </div>
-    )
+    const {title, onSelect, isMarked, children} = props;
+    const className = `m-2 p-2 shadow-sm text-center ${isMarked && "bg-warning" }`;
+    return <Card className={className}
+                 onClick={onSelect}>
+        <h5>{title}</h5>
+        {children}
+    </Card>;
 }

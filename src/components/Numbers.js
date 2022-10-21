@@ -1,5 +1,6 @@
 import * as PropTypes from "prop-types";
 import {MyCard} from "./MyCard";
+import {Section} from "./Section";
 
 
 Numbers.propTypes = {
@@ -12,23 +13,32 @@ Numbers.propTypes = {
 function Number(props) {
     const {number,onSelect, isMarked} = props;
     return (
-        <MyCard isMarked={isMarked} onSelect={onSelect} title={number}/>
+        <MyCard isMarked={isMarked} onSelectNumber={onSelect} title={number}/>
     )
 }
 
 
 
 export function Numbers(props) {
-    const {numbers,onSelectNumber,markedNumber} = props;
-    return(
-        <div className="d-flex flex-row flex-wrap">
-            {numbers.map((n,index) => <Number isMarked={markedNumber} onSelect={onSelectNumber} key={index} number={n}/>)}
-        </div>
-
-    )
+    const {numbers, title, isInitiallyOpen, onSelectNumber, markedNumber} = props
+    return (
+        <Section title={title} isInitiallyOpen={isInitiallyOpen}>
+            {numbers.map((n, i) =>
+                <Number key={i}
+                        number={n}
+                        isMarked={markedNumber===n}
+                        onSelect={onSelectNumber}/>)}
+        </Section>
+    );
 }
 
-
+Numbers.propTypes = {
+    numbers: PropTypes.array,
+    title: PropTypes.string,
+    isInitiallyOpen: PropTypes.bool,
+    markedNumber: PropTypes.number,
+    onSelectNumber: PropTypes.func
+};
 
 
 

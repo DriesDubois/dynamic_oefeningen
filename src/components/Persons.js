@@ -4,12 +4,12 @@ import {MyButton} from "./MyButton";
 
 
 export function Persons(props) {
-    const {persons,defaultState,editable,selectedPerson} = props;
+    const {persons,defaultState,editable,onSelectPerson} = props;
     const {title} = props;
     if (!persons) return;
     return (
         <Section title={title} defaultState={defaultState}>
-            {persons.map(p => <Person selectedPerson={selectedPerson} key={p.id} person={p} editable={true}/>)}
+            {persons.map(p => <Person onSelectPerson={onSelectPerson && (() => onSelectPerson(p))} key={p.id} person={p} editable={true}/>)}
         </Section>
     )
 }

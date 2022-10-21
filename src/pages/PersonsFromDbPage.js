@@ -78,7 +78,8 @@ export function PersonsFromDbPage() {
             <MyButton onClick={() => deletePerson()}>delete</MyButton>
             <label htmlFor="search">search input: </label>
             <input id="search" value={searchInput} onChange={e => setSearchInput(e.target.value)}/>
-            <Persons title="personen uit de database" persons={filterPersons(values, searchInput)} selectedPerson={setSelectedPerson} defaultState={true} editable={true}/>
+            <Persons title="personen uit de database" persons={filterPersons(values, searchInput)} onSelectPerson={p => setSelectedPerson(p)} defaultState={true} editable={true}/>
+            <p>${selectedPerson && selectedPerson.name}</p>
         </div>
     )
 }
